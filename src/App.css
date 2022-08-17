@@ -1,38 +1,191 @@
 .App {
-  text-align: center;
-}
+  width: 100vw;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.App h1{
+  width: 100%;
+
+  text-align: center;
+
+  background-color: blueviolet;
+  color: #fff;
+
+  margin-bottom: 15px;
+  padding: 12px;
+
+  font-size: 22px;
+}
+
+
+.container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  width: 55rem;
+  padding: 20px;
+}
+
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 50rem;
+
+  margin:  7px 0;
+}
+
+/* .completed{
+  text-decoration: line-through;
+  color: #ccc;
+} */
+
+input[type=text] {
+  width: 100%;
+  border: #ccc 1.5px solid;
+  padding: 10px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type=text] :focus{
+  border: 1.5px solid blueviolet ;
+}
+
+.formControl{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+
+  width: 30rem;
+  
+  background-color: #fff;
+
+  border: 1px solid #ccc;
+
+  padding: 10px;
+  margin-bottom: 7px;
+}
+
+.btn {
+  padding: 5px;
+  margin-left: 5px;
+  
+  background-color: #fff;
+  color: blueviolet;
+
+  border: 1.5px solid blueviolet;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+
+}
+
+.add{
+  color: #fff;
+  outline: none;
+  border: none;
+  background-color: blueviolet;
+}
+
+.delete{
+  color: red;
+  border: 1.5px solid red;
+}
+
+.value{
+  width: 14px;
+  height: 14px;
+
+  color: blueviolet;
+  background-color: #fff;
+  border: blueviolet solid 1.5px;
+
+  border-radius: 50%;
+
+  font-size: 12px;
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  margin-right: 7px;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 30rem;
+  height : 2rem ;
+  font-size: 14px;
+  left: 0;
+
+  margin-bottom: 7px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar > div{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
+
+.todoLabel{
+  cursor: pointer;
+  padding-left: 20px;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type="checkbox"]:hover ~ span{
+  border: 1.5px solid #aab0b9;
+}
+
+input[type="checkbox"]:focus:checked ~ span{
+  border: 1.5px solid #6317a9;
+}
+
+.completed{
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+input[type="checkbox"]:checked ~ span {
+  color: #FFFFFF;
+  background: blueviolet url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+) 50% 40% no-repeat;
+  border: 1.5px solid blueviolet;
+}
+
+.indicator {
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  width:  1rem; 
+  height: 1rem;
+  background-color: #d4d7dc;
+  border: 1.5px solid #d4d7dc;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}  
